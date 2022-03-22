@@ -76,7 +76,7 @@ describe( 'coblocks/gallery-masonry transforms', () => {
 	} );
 
 	it( 'should transform from core/gallery block', () => {
-		const coreGallery = createBlock( 'core/gallery', { images: sharedAttributes.images } );
+		const coreGallery = createBlock( 'core/gallery', {}, innerBlocks );
 		const transformed = switchToBlockType( coreGallery, name )[0];
 
 		expect( transformed.isValid ).toBe( true );
@@ -159,12 +159,11 @@ describe( 'coblocks/gallery-masonry transforms', () => {
 
 	it( 'should transform to core/gallery block', () => {
 		const block = createBlock( name, masonryAttributes, innerBlocks );
-		const transformed = switchToBlockType( block, 'core/gallery' );
+		const transformed = switchToBlockType( block, 'core/gallery' )[0];
 
-		expect( transformed[ 0 ].isValid ).toBe( true );
-		sharedAttributes.images.forEach( ( image, index ) => {
-			expect( transformed[ 0 ].attributes.images[ index ].index ).toBe( index );
-			expect( transformed[ 0 ].attributes.images[ index ].url ).toBe( image.url );
+		expect( transformed.isValid ).toBe( true );
+		transformed.innerBlocks.forEach( ( image, index ) => {
+			expect( image.attributes.url ).toBe( sharedAttributes.images[ index ].url );
 		} );
 	} );
 

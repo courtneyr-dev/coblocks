@@ -5,7 +5,7 @@ Tags: page builder, Gutenberg blocks, WordPress blocks, gutenberg, blocks
 Requires at least: 5.5
 Tested up to: 5.9
 Requires PHP: 5.6
-Stable tag: 2.22.3
+Stable tag: 2.22.7
 License: GPL-2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -111,6 +111,33 @@ Any properly developed WordPress theme will work with CoBlocks, though if you're
 Developers can also apply minor style touch-ups to their themes if necessary. If you're a developer and you need help, don't hesitate to [reach out](https://wordpress.org/support/plugin/coblocks/).
 
 == Changelog ==
+
+= 2.22.7 / 2022-03-18 =
+##### Bug fixes
+* Fix superfluous focus issue with Accordion block [#2310](https://github.com/godaddy-wordpress/coblocks/pull/2310)
+
+##### Misc
+* Translate titles when registering blocks [#2332](https://github.com/godaddy-wordpress/coblocks/pull/2332)
+
+= 2.22.6 / 2022-03-17 =
+##### Bug fixes
+* Resolve style bleed issue with Offset gallery [#2331](https://github.com/godaddy-wordpress/coblocks/pull/2331)
+
+= 2.22.5 / 2022-03-17 =
+##### Bug fixes
+* Sanitize email in Form block and properly escape URI [#2330](https://github.com/godaddy-wordpress/coblocks/pull/2330)
+
+= 2.22.4 / 2022-03-15 =
+##### Bug fixes
+* Fix Form block where nonce is unverified and some sanitization [#2329](https://github.com/godaddy-wordpress/coblocks/pull/2329)
+* Fix Gist block to make sure there is no PHPCS error [#2323](https://github.com/godaddy-wordpress/coblocks/pull/2323)
+* Fix Events block timezone problem [#2319](https://github.com/godaddy-wordpress/coblocks/pull/2319)
+
+##### Misc
+* Lint everything on CI [#2311](https://github.com/godaddy-wordpress/coblocks/pull/2311)
+* Update block-assets syntax [#2322](https://github.com/godaddy-wordpress/coblocks/pull/2322)
+* Update some dependencies [#2313](https://github.com/godaddy-wordpress/coblocks/pull/2313)
+* Enhance restore cache to also install missing deps on build pipeline [#2317](https://github.com/godaddy-wordpress/coblocks/pull/2317)
 
 = 2.22.3 / 2022-03-10 =
 ##### Bug fixes

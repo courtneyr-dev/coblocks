@@ -146,13 +146,12 @@ describe( 'coblocks/gallery-carousel transforms', () => {
 
 	it( 'should transform to core/gallery block', () => {
 		const block = createBlock( name, attributes );
-		const transformed = switchToBlockType( block, 'core/gallery' );
+		const transformed = switchToBlockType( block, 'core/gallery' )[0];
 
-		expect( transformed[ 0 ].isValid ).toBe( true );
-		for ( let i = 0; i < attributes.images.length; i++ ) {
-			expect( transformed[ 0 ].attributes.images[ i ].index ).toBe( attributes.images[ i ].index );
-			expect( transformed[ 0 ].attributes.images[ i ].url ).toBe( attributes.images[ i ].url );
-		}
+		expect( transformed.isValid ).toBe( true );
+		transformed.innerBlocks.forEach( ( image, index ) => {
+			expect( image.attributes.url ).toBe( attributes.images[ index ].url );
+		} );
 	} );
 
 	it( 'should transform when ":carousel" prefix is seen', () => {
