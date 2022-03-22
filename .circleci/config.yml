@@ -538,7 +538,7 @@ commands:
     steps:
       - checkout
       - node/install:
-          node-version: '16.14'
+          node-version: '14.19.1'
       - attach_workspace:
           at: ~/project
       - restore_yarn_cache
